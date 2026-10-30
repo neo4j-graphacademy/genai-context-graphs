@@ -1,6 +1,6 @@
 # The course is written against this version of neo4j-agent-memory.
 # The package is experimental and its API changes between releases, so the
 # version is pinned to keep the lessons and the code in step.
-neo4j-agent-memory[openai,pydantic-ai]==0.5.0
+neo4j-agent-memory[openai,pydantic-ai]==0.8.0
 pydantic-ai
 python-dotenv

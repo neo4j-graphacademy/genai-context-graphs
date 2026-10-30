@@ -17,6 +17,8 @@ settings = MemorySettings(
         uri=os.environ["NEO4J_URI"],
         username=os.environ["NEO4J_USERNAME"],
         password=os.environ["NEO4J_PASSWORD"],
+        # Sandboxes are not always named "neo4j", so use the name from .env.
+        database=os.getenv("NEO4J_DATABASE", "neo4j"),
     ),
     # The extraction pipeline runs spaCy and GLiNER before falling back to the
     # language model. Those two need extra packages (and a GPU-sized download),

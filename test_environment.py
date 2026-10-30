@@ -46,7 +46,9 @@ async def check_neo4j() -> bool:
         auth=(os.environ["NEO4J_USERNAME"], os.environ["NEO4J_PASSWORD"]),
     )
     try:
-        records, _, _ = await driver.execute_query("RETURN 1 AS ok")
+        records, _, _ = await driver.execute_query(
+            "RETURN 1 AS ok", database_=os.getenv("NEO4J_DATABASE", "neo4j")
+        )
         if records[0]["ok"] != 1:
             print("FAIL  Neo4j connected but did not answer as expected")
             return False
